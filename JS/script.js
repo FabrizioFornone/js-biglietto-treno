@@ -24,8 +24,8 @@ console.log(age);
 
 // Se non sono numeri insulta l'utente se sono numeri procedi
 
-if (isNaN(numKm) || isNaN(age)) {
-  outputHtml.innerHTML = "Sei scemo? Inserisci un numero";
+if (isNaN(numKm) || isNaN(age))  {
+  outputHtml.innerHTML = "Sei scemo? Inserisci solo numeri";
 } else {
   let price = numKm * 0.21;
   console.log(price);
