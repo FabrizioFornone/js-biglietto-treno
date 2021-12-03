@@ -1,0 +1,31 @@
+body {
+  background-color: whitesmoke;
+  font-family: Helvetica, Sans-Serif;
+}
+
+header {
+  text-align: center;
+  background-color: #c0c0c0;
+}
+
+h1 {
+  display: inline-block;
+  padding: 5px 80px;
+  border-radius: 10px;
+}
+
+div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+h1,
+div {
+  background-color: tomato;
+  border: 2px solid #000;
+}
