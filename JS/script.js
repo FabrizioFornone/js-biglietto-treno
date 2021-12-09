@@ -2,13 +2,9 @@
 
 const pricePerKm = 0.21;
 
-const discount18 = 0.20;
+const discount18 = 0.2;
 
-const discount65 = 0.40;
-
-// Dichiarazione della costante outputHtml
-
-const outputHtml = document.getElementById("output");
+const discount65 = 0.4;
 
 // 1° prompt: numero di km da percorrere?
 
@@ -30,31 +26,38 @@ age = parseInt(age);
 
 console.log(age);
 
+// Costante button
+
+const button = document.getElementById("button-box");
+
 // Se non sono numeri insulta l'utente se sono numeri procedi
 
-if (isNaN(numKm) || isNaN(age))  {
-  outputHtml.innerHTML = "Sei scemo? Inserisci solo numeri";
+if (isNaN(numKm) || isNaN(age)) {
+  button.innerHTML = "Sei scemo? Inserisci solo numeri";
 } else {
-  let price = numKm * pricePerKm;
-  console.log(price);
+  button.addEventListener('click', function () {
+    let price = numKm * pricePerKm;
 
-  /* Se l'età del passeggero è < di 18 anni
-  price è scontato del 20%,
-  altrimenti se l'età è > di 65 anni price è scontato del 40% */
+    console.log(price);
 
-  if (age < 18) {
-    price = price - price * discount18;
-  } else if (age > 65) {
-    price = price - price * discount65;
-  }
+    /* Se l'età del passeggero è < di 18 anni
+    price è scontato del 20%,
+    altrimenti se l'età è > di 65 anni price è scontato del 40% */
 
-  console.log(price);
+    if (age < 18) {
+      price = price - price * discount18;
+    } else if (age > 65) {
+      price = price - price * discount65;
+    }
 
-  // Output visivo in html
+    console.log(price);
 
-  price = price.toFixed(2);
+    // Output visivo in html
 
-  console.log(price);
+    price = price.toFixed(2);
 
-  outputHtml.innerHTML = `Il costo complessivo del biglietto è ${price} €`;
+    console.log(price);
+
+    button.innerHTML += `<br/> Il costo complessivo del biglietto è ${price} €`;
+  });
 }
