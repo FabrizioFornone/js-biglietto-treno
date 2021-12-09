@@ -1,3 +1,11 @@
+// Costanti applicativi
+
+const pricePerKm = 0.21;
+
+const discount18 = 0.20;
+
+const discount65 = 0.40;
+
 // Dichiarazione della costante outputHtml
 
 const outputHtml = document.getElementById("output");
@@ -27,7 +35,7 @@ console.log(age);
 if (isNaN(numKm) || isNaN(age))  {
   outputHtml.innerHTML = "Sei scemo? Inserisci solo numeri";
 } else {
-  let price = numKm * 0.21;
+  let price = numKm * pricePerKm;
   console.log(price);
 
   /* Se l'età del passeggero è < di 18 anni
@@ -35,16 +43,16 @@ if (isNaN(numKm) || isNaN(age))  {
   altrimenti se l'età è > di 65 anni price è scontato del 40% */
 
   if (age < 18) {
-    price = price - price * 0.2;
+    price = price - price * discount18;
   } else if (age > 65) {
-    price = price - price * 0.4;
+    price = price - price * discount65;
   }
 
   console.log(price);
 
   // Output visivo in html
 
-  price = Math.round(price * 100) / 100;
+  price = price.toFixed(2);
 
   console.log(price);
 
